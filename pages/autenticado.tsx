@@ -1,5 +1,6 @@
 import { GetServerSideProps } from "next";
 import { signOut, useSession, getSession } from "next-auth/react";
+
 import styles from '../src/styles/Page.module.css';
 
 function Autenticado() {
@@ -9,11 +10,6 @@ function Autenticado() {
     <div className={styles.homeContainer}>
       <div className={styles.welcomeText}>Boas-Vindas</div>
       <div className={styles.userInfo}>
-        {session?.user?.image && (
-          <img
-            className={styles.userImage}
-            src={session.user.image} />
-        )}
         <div className={styles.userName}>{session?.user?.name}</div>
       </div>
 
